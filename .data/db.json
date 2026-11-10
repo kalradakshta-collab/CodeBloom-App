@@ -1,0 +1,500 @@
+{
+  "users": {
+    "developer@codebloom.dev": {
+      "fullName": "Alex River",
+      "email": "developer@codebloom.dev",
+      "occupation": "Software Engineer",
+      "professionalPosition": "Full Stack Developer",
+      "workExperience": "2-4 years",
+      "programmingExperience": "3 years in TypeScript & Python",
+      "preferredLanguages": [
+        "Python",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "skillLevel": "Intermediate",
+      "purpose": "Deep codebase onboarding & visual debugging",
+      "emailVerified": true,
+      "passwordHash": "bloom_demo_hash_2026",
+      "createdAt": "2026-11-10T11:27:50.180Z"
+    },
+    "morgan@test.dev": {
+      "fullName": "Morgan Bloom",
+      "email": "morgan@test.dev",
+      "occupation": "Junior Developer",
+      "professionalPosition": "Software Engineer",
+      "workExperience": "1-3 years",
+      "programmingExperience": "Intermediate",
+      "preferredLanguages": [
+        "TypeScript",
+        "Python"
+      ],
+      "skillLevel": "Beginner",
+      "purpose": "Understand complex repositories and debug faster",
+      "emailVerified": true,
+      "passwordHash": "hash_1794311349099",
+      "createdAt": "2026-11-10T11:49:09.099Z"
+    }
+  },
+  "usage": {
+    "developer@codebloom.dev": {
+      "userId": "developer@codebloom.dev",
+      "secondsUsed": 3930,
+      "maxFreeSeconds": 28800,
+      "plan": "paid",
+      "subscriptionStatus": "cancelled",
+      "billingHistory": [
+        {
+          "date": "2026-11-10T11:49:28.832Z",
+          "amount": 25,
+          "description": "CodeBloom Pro — Monthly Subscription ($25 USD/mo, Billed Monthly)",
+          "status": "Paid (Verified)"
+        }
+      ],
+      "lastActive": "2026-11-10T11:49:07.087Z",
+      "currentDayUTC": "2026-11-10",
+      "dailySecondsUsed": 482,
+      "nextResetUTC": "2026-11-11T00:00:00.000Z",
+      "maxDailySeconds": 72000,
+      "maxMonthlySeconds": 900000,
+      "monthlySecondsUsed": 482
+    },
+    "morgan@test.dev": {
+      "userId": "morgan@test.dev",
+      "plan": "free",
+      "subscriptionStatus": "none",
+      "dailySecondsUsed": 0,
+      "maxDailySeconds": 28800,
+      "monthlySecondsUsed": 0,
+      "maxMonthlySeconds": 864000,
+      "currentDayUTC": "2026-11-10",
+      "nextResetUTC": "2026-11-11T00:00:00.000Z",
+      "billingHistory": [],
+      "lastActive": "2026-11-10T11:49:09.099Z"
+    }
+  },
+  "projects": {
+    "proj-1794310101824": {
+      "id": "proj-1794310101824",
+      "userId": "developer@codebloom.dev",
+      "name": "bloom/dreamy-cart",
+      "source": "github",
+      "repoUrl": "https://github.com/bloom/dreamy-cart",
+      "createdAt": "2026-11-10T11:28:21.824Z",
+      "files": [
+        {
+          "path": "src/main.tsx",
+          "language": "typescript",
+          "content": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\nimport './index.css';\n\nReactDOM.createRoot(document.getElementById('root')!).render(<App />);\n",
+          "lines": 7,
+          "errorsCount": 0,
+          "functions": [
+            "render"
+          ],
+          "imports": [
+            "import React from 'react'",
+            "import App from './App'"
+          ]
+        },
+        {
+          "path": "src/App.tsx",
+          "language": "typescript",
+          "content": "import React, { useState, useEffect } from 'react';\nimport { Header } from './components/Header';\nimport { GraphView } from './components/GraphView';\nimport { fetchProjectData } from './services/api';\n\nexport default function App() {\n  const [data, setData] = useState(null);\n  useEffect(() => {\n    const ctrl = new AbortController();\n    fetchProjectData(ctrl.signal).then(setData);\n    return () => ctrl.abort();\n  }, []);\n  return <div className=\"app\"><Header /><GraphView data={data} /></div>;\n}\n",
+          "lines": 14,
+          "errorsCount": 0,
+          "functions": [
+            "App"
+          ],
+          "imports": [
+            "import { Header } from './components/Header'",
+            "import { GraphView } from './components/GraphView'"
+          ]
+        },
+        {
+          "path": "src/services/api.ts",
+          "language": "typescript",
+          "content": "export async function fetchProjectData(signal?: AbortSignal) {\n  const res = await fetch('/api/project', { signal });\n  if (!res.ok) throw new Error('Failed to load project');\n  return res.json();\n}\n",
+          "lines": 6,
+          "errorsCount": 0,
+          "functions": [
+            "fetchProjectData"
+          ],
+          "imports": []
+        },
+        {
+          "path": "package.json",
+          "language": "json",
+          "content": "{\n  \"name\": \"bloom-app\",\n  \"dependencies\": {\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\",\n    \"lucide-react\": \"^0.546.0\"\n  }\n}\n",
+          "lines": 8,
+          "errorsCount": 0,
+          "functions": [],
+          "imports": []
+        }
+      ],
+      "dependencies": [
+        {
+          "name": "react",
+          "version": "^19.0.0",
+          "type": "npm"
+        },
+        {
+          "name": "react-dom",
+          "version": "^19.0.0",
+          "type": "npm"
+        },
+        {
+          "name": "lucide-react",
+          "version": "^0.546.0",
+          "type": "npm"
+        }
+      ],
+      "complexityScore": 42,
+      "architectureNodes": [
+        {
+          "id": "src/main.tsx",
+          "label": "main.tsx",
+          "type": "app",
+          "connections": [
+            "src/App.tsx"
+          ],
+          "lines": 7
+        },
+        {
+          "id": "src/App.tsx",
+          "label": "App.tsx",
+          "type": "app",
+          "connections": [
+            "src/services/api.ts"
+          ],
+          "lines": 14
+        },
+        {
+          "id": "src/services/api.ts",
+          "label": "api.ts",
+          "type": "function",
+          "connections": [],
+          "lines": 6
+        },
+        {
+          "id": "package.json",
+          "label": "package.json",
+          "type": "dependency",
+          "connections": [],
+          "lines": 8
+        }
+      ],
+      "onboardingGuide": {
+        "overview": "bloom/dreamy-cart is structured as a modular architecture with high cohesion and decoupled state layers, perfect for a Intermediate engineer to master.",
+        "techStack": [
+          "TypeScript",
+          "React",
+          "Python",
+          "Node.js",
+          "Vite"
+        ],
+        "entryPoint": "src/main.tsx",
+        "criticalFiles": [
+          "src/main.tsx",
+          "src/App.tsx",
+          "src/services/api.ts",
+          "package.json"
+        ],
+        "learningPath": [
+          {
+            "step": "Day 1: Orientation & Sanctuary Setup",
+            "description": "Clone repo, install dependencies, and trace the entry point imports.",
+            "files": [
+              "src/main.tsx",
+              "src/App.tsx"
+            ]
+          },
+          {
+            "step": "Day 2: State & Data Pipeline",
+            "description": "Inspect reactive stores, API controllers, and error boundaries.",
+            "files": [
+              "src/services/api.ts",
+              "package.json"
+            ]
+          },
+          {
+            "step": "Day 3: First Safe Contribution",
+            "description": "Add tests, verify 0 cyclical dependencies, and submit your first pull request.",
+            "files": [
+              "src/main.tsx",
+              "src/App.tsx",
+              "src/services/api.ts"
+            ]
+          }
+        ]
+      }
+    },
+    "proj-1794311334386": {
+      "id": "proj-1794311334386",
+      "userId": "developer@codebloom.dev",
+      "name": "bloom/fastapi-demo",
+      "source": "github",
+      "repoUrl": "https://github.com/bloom/fastapi-demo",
+      "createdAt": "2026-11-10T11:48:54.386Z",
+      "files": [
+        {
+          "path": "main.py",
+          "language": "python",
+          "content": "from fastapi import FastAPI, HTTPException\nfrom pydantic import BaseModel\n\napp = FastAPI(title=\"BloomAPI\")\n\n@app.get(\"/\")\ndef read_root():\n    return {\"status\": \"blooming\", \"version\": \"1.0.0\"}\n\n@app.post(\"/items\")\ndef create_item(item: dict):\n    if not item:\n        raise HTTPException(status_code=400, detail=\"Item empty\")\n    return {\"saved\": True, \"data\": item}\n",
+          "lines": 14,
+          "errorsCount": 0,
+          "functions": [
+            "read_root",
+            "create_item"
+          ],
+          "imports": [
+            "from fastapi import FastAPI, HTTPException",
+            "from pydantic import BaseModel"
+          ]
+        },
+        {
+          "path": "services/auth.py",
+          "language": "python",
+          "content": "import jwt\nimport datetime\n\nSECRET = \"bloom_super_secret_key\"\n\ndef generate_token(user_id: str) -> str:\n    payload = {\n        \"sub\": user_id,\n        \"exp\": datetime.datetime.utcnow() + datetime.timedelta(hours=24)\n    }\n    return jwt.encode(payload, SECRET, algorithm=\"HS256\")\n",
+          "lines": 11,
+          "errorsCount": 0,
+          "functions": [
+            "generate_token"
+          ],
+          "imports": [
+            "import jwt",
+            "import datetime"
+          ]
+        },
+        {
+          "path": "models/user.py",
+          "language": "python",
+          "content": "from pydantic import BaseModel\n\nclass User(BaseModel):\n    id: str\n    email: str\n    is_active: bool = True\n",
+          "lines": 6,
+          "errorsCount": 0,
+          "functions": [
+            "User"
+          ],
+          "imports": [
+            "from pydantic import BaseModel"
+          ]
+        }
+      ],
+      "dependencies": [
+        {
+          "name": "fastapi",
+          "version": "^0.110.0",
+          "type": "pip"
+        },
+        {
+          "name": "pydantic",
+          "version": "^2.6.0",
+          "type": "pip"
+        },
+        {
+          "name": "pyjwt",
+          "version": "^2.8.0",
+          "type": "pip"
+        }
+      ],
+      "complexityScore": 42,
+      "architectureNodes": [
+        {
+          "id": "main.py",
+          "label": "main.py",
+          "type": "app",
+          "connections": [],
+          "lines": 14
+        },
+        {
+          "id": "services/auth.py",
+          "label": "auth.py",
+          "type": "function",
+          "connections": [
+            "models/user.py"
+          ],
+          "lines": 11
+        },
+        {
+          "id": "models/user.py",
+          "label": "user.py",
+          "type": "module",
+          "connections": [],
+          "lines": 6
+        }
+      ],
+      "onboardingGuide": {
+        "overview": "bloom/fastapi-demo is structured as a modular architecture with high cohesion and decoupled state layers, perfect for a Intermediate engineer to master.",
+        "techStack": [
+          "TypeScript",
+          "React",
+          "Python",
+          "Node.js",
+          "Vite"
+        ],
+        "entryPoint": "main.py",
+        "criticalFiles": [
+          "main.py",
+          "services/auth.py",
+          "models/user.py"
+        ],
+        "learningPath": [
+          {
+            "step": "Day 1: Orientation & Sanctuary Setup",
+            "description": "Clone repo, install dependencies, and trace the entry point imports.",
+            "files": [
+              "main.py",
+              "services/auth.py"
+            ]
+          },
+          {
+            "step": "Day 2: State & Data Pipeline",
+            "description": "Inspect reactive stores, API controllers, and error boundaries.",
+            "files": [
+              "models/user.py"
+            ]
+          },
+          {
+            "step": "Day 3: First Safe Contribution",
+            "description": "Add tests, verify 0 cyclical dependencies, and submit your first pull request.",
+            "files": [
+              "main.py",
+              "services/auth.py",
+              "models/user.py"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "corrections": {
+    "corr-1794311324817": {
+      "id": "corr-1794311324817",
+      "userId": "developer@codebloom.dev",
+      "filename": "test.py",
+      "language": "python",
+      "originalCode": "def calculate_total(a, b):\n    print(\"Total is: \" + str(a + b)\n    return a + b\n",
+      "correctedCode": "def calculate_total(a, b):\n    print(\"Total is: \" + str(a + b))\n    return a + b\n",
+      "detectedIssues": [
+        {
+          "line": 2,
+          "type": "syntax",
+          "message": "SyntaxError: Unclosed parenthesis '(' on line 2",
+          "severity": "error",
+          "suggestedFix": "Add closing ')'"
+        }
+      ],
+      "explanation": "CodeBloom detected 1 issue(s). The primary concern is SyntaxError: Unclosed parenthesis '(' on line 2.",
+      "whyOriginalWasWrong": "In Python, strict indentation, block colons (:), and proper parenthesized function calls are enforced by the grammar parser. Leaving colons or brackets unclosed raises immediate SyntaxErrors during byte-compilation.",
+      "status": "accepted",
+      "createdAt": "2026-11-10T11:48:44.817Z"
+    }
+  },
+  "chats": {
+    "developer@codebloom.dev": [
+      {
+        "id": "msg-1794311340366",
+        "userId": "developer@codebloom.dev",
+        "projectId": "proj-1794311334386",
+        "sender": "user",
+        "text": "What does the generate_token function do in services/auth.py?",
+        "createdAt": "2026-11-10T11:49:00.366Z"
+      },
+      {
+        "id": "msg-1794311340554",
+        "userId": "developer@codebloom.dev",
+        "projectId": "proj-1794311334386",
+        "sender": "cat",
+        "text": "Meow! I analyzed \"What does the generate_token function do in services/auth.py?\". The module structure is clean, and following Intermediate practices will keep your architecture blooming!",
+        "createdAt": "2026-11-10T11:49:00.553Z"
+      }
+    ]
+  },
+  "tasks": {
+    "developer@codebloom.dev": [
+      {
+        "id": "task-1794311360627",
+        "userId": "developer@codebloom.dev",
+        "title": "Optimize recursive AST walker",
+        "category": "Performance",
+        "priority": "high",
+        "deadline": "Tomorrow",
+        "estimatedMins": 15,
+        "milestone": "Day 1",
+        "completed": false,
+        "createdAt": "2026-11-10T11:49:20.627Z"
+      },
+      {
+        "id": "t-1",
+        "userId": "developer@codebloom.dev",
+        "milestone": "Day 1",
+        "title": "Review repo topology in CodeBloom Architecture Map",
+        "category": "Architecture",
+        "priority": "high",
+        "deadline": "Day 1 Sprint",
+        "estimatedMins": 15,
+        "completed": true,
+        "createdAt": "2026-11-10T11:48:40.954Z"
+      },
+      {
+        "id": "t-2",
+        "userId": "developer@codebloom.dev",
+        "milestone": "Day 1",
+        "title": "Run local test harness and verify 0 regression invariants",
+        "category": "Environment",
+        "priority": "medium",
+        "deadline": "Day 1 Sprint",
+        "estimatedMins": 10,
+        "completed": true,
+        "createdAt": "2026-11-10T11:48:40.955Z"
+      },
+      {
+        "id": "t-3",
+        "userId": "developer@codebloom.dev",
+        "milestone": "Day 1",
+        "title": "Read critical files: src/main.tsx and services/api.ts",
+        "category": "Core Knowledge",
+        "priority": "high",
+        "deadline": "Day 1 Sprint",
+        "estimatedMins": 25,
+        "completed": false,
+        "createdAt": "2026-11-10T11:48:40.955Z"
+      },
+      {
+        "id": "t-4",
+        "userId": "developer@codebloom.dev",
+        "milestone": "Day 2",
+        "title": "Audit async state hooks for unhandled promises with Cat AI",
+        "category": "Code Quality",
+        "priority": "medium",
+        "deadline": "Day 2 Sprint",
+        "estimatedMins": 30,
+        "completed": false,
+        "createdAt": "2026-11-10T11:48:40.955Z"
+      },
+      {
+        "id": "t-5",
+        "userId": "developer@codebloom.dev",
+        "milestone": "Day 2",
+        "title": "Trace user session state lifecycle from JWT to client context",
+        "category": "Auth & Data",
+        "priority": "low",
+        "deadline": "Day 2 Sprint",
+        "estimatedMins": 20,
+        "completed": false,
+        "createdAt": "2026-11-10T11:48:40.955Z"
+      },
+      {
+        "id": "t-6",
+        "userId": "developer@codebloom.dev",
+        "milestone": "Day 3",
+        "title": "Open first clean pull request with automated AST verification",
+        "category": "Delivery",
+        "priority": "high",
+        "deadline": "Day 3 Sprint",
+        "estimatedMins": 45,
+        "completed": false,
+        "createdAt": "2026-11-10T11:48:40.955Z"
+      }
+    ]
+  }
+}

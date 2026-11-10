@@ -1,0 +1,17 @@
+{
+  "name": "CodeBloom — AI Codebase Architecture & Debugger",
+  "short_name": "CodeBloom",
+  "description": "Understand complex repositories, visualize architecture, detect errors and get AI-powered guidance.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF9F2",
+  "theme_color": "#493B55",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

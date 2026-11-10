@@ -1,0 +1,8 @@
+{
+  "name": "CodeBloom — AI Codebase Architecture & Onboarding Visualizer",
+  "description": "Understand. Visualize. Debug. Bloom. The premium developer companion combining architectural intelligence with a serene, dreamy pastel aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

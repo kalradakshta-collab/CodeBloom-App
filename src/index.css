@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-pixel: 'Silkscreen', monospace;
+    --font-mono: 'JetBrains Mono', monospace;
+    
+    --color-lavender: #DCCFF5;
+    --color-baby-pink: #F8DCE8;
+    --color-soft-peach: #FFE4D2;
+    --color-mint-green: #D8F0E3;
+    --color-sky-blue: #DCEBFA;
+    --color-cream-white: #FFF9F2;
+    --color-dark-plum: #493B55;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FFF9F2;
+    color: #493B55;
+    overflow-x: hidden;
+  }
+}
+
+.font-pixel {
+  font-family: 'Silkscreen', monospace;
+  letter-spacing: -0.02em;
+}
+
+.font-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subtle pixel border shadow aesthetic (Nomi inspired) */
+.pixel-box-shadow {
+  box-shadow: 4px 4px 0px 0px #493B55;
+}
+
+.pixel-box-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #493B55;
+}
+
+.pixel-box-shadow-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pixel-box-shadow-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #493B55;
+}
+
+/* Dreamy pastel gradients */
+.bg-gradient-bloom {
+  background: linear-gradient(135deg, #FFF9F2 0%, #F8DCE8 35%, #DCCFF5 70%, #DCEBFA 100%);
+}
+
+.bg-gradient-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 249, 242, 0.75) 100%);
+}
+
+.bg-gradient-peach-pink {
+  background: linear-gradient(135deg, #FFE4D2 0%, #F8DCE8 100%);
+}
+
+.bg-gradient-lavender-blue {
+  background: linear-gradient(135deg, #DCCFF5 0%, #DCEBFA 100%);
+}
+
+.bg-gradient-mint-peach {
+  background: linear-gradient(135deg, #D8F0E3 0%, #FFE4D2 100%);
+}
+
+/* Gentle mascot and bubble float animation */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+@keyframes bubble-bob {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+
+.animate-bubble-bob {
+  animation: bubble-bob 4s ease-in-out infinite;
+}
+
+/* Subtle pixel glitch on hover */
+@keyframes pixel-jitter {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(-1px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+
+.hover-jitter:hover {
+  animation: pixel-jitter 0.2s ease infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF9F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DCCFF5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #493B55;
+}
