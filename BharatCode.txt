@@ -1,0 +1,35 @@
+Project Name: CodeBloom
+
+Tagline: Understand. Visualize. Debug. Bloom.
+
+Description:
+CodeBloom is an AI-powered coding companion designed to help developers understand, debug, and improve their code through an interactive developer-friendly interface.
+
+Main Features:
+
+- AI Fox Assistant
+- Code Editor
+- AI Debugger and Code Inspector
+- Architecture Visualization
+- Repository Explorer
+- Developer Onboarding Guide
+- AI Code Explanation
+- Task Management
+- Project Workspace
+
+Technology:
+
+- React
+- TypeScript
+- Tailwind CSS
+- Firebase
+- BharatCode API integration (only if implemented and configured)
+
+GitHub Repository:
+https://github.com/kalradakshta-collab/CodeBloom-App
+
+Live Demo:
+[Paste your published CodeBloom app link here]
+
+Project Status:
+Developed as a learning and hackathon project. Some features may require further implementation and testing.
